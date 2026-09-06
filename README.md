@@ -1,1 +1,3 @@
-![ Next_Word_Prediction- System Dataflow](sys.architecture.png)
+## System Dataflow
+
+![Next Word Prediction - System Dataflow](frontend/sys.architecture.png)
