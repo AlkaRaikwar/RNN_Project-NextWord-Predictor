@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Client Agent</title>
+
+<link rel="stylesheet" href="style.css">
+     <script src="script.js" defer></script>
+</head>
+
+
+<body>
+
+    <div class="agent-container">
+
+        <!-- ROBOT -->
+
+        <div class="robot">
+
+            <div class="antenna"></div>
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="face">
+
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+
+                <div class="mouth"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <div class="agent-title">
+            Client Agent
+        </div>
+
+        <div class="agent-status">
+            ● Online
+        </div>
+
+
+        <!-- CHAT -->
+
+        <div class="chat-box">
+
+            <div class="chat-label">
+                Ask the agent about a product
+            </div>
+
+            <div class="input-row">
+
+                <input
+                    type="text"
+                    id="product"
+                    placeholder="Product name..."
+                >
+
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="Price"
+                >
+
+                <button onclick="askAgent()">
+                    Send
+                </button>
+
+            </div>
+
+
+            <div
+                class="response"
+                id="response">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+   
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at center, #181b20, #090a0d 60%, #030304);
+
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #ffd42a;
+            opacity: 0.06;
+            filter: blur(130px);
+            border-radius: 50%;
+        }
+
+        /* MAIN CARD */
+
+        .agent-container {
+            width: 380px;
+            padding: 35px 30px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            background: rgba(25, 27, 32, 0.9);
+
+            border: 1px solid rgba(255, 212, 42, 0.35);
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 0 35px rgba(255, 212, 42, 0.08),
+                inset 0 0 30px rgba(255, 212, 42, 0.03);
+
+            backdrop-filter: blur(15px);
+        }
+
+
+        /* ROBOT */
+
+        .robot {
+            width: 190px;
+            height: 165px;
+
+            position: relative;
+
+            background: linear-gradient(145deg, #292c32, #15171b);
+
+            border: 2px solid #ffd42a;
+
+            border-radius: 45px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow:
+                0 0 12px #ffd42a,
+                0 0 40px rgba(255, 212, 42, 0.25);
+
+            animation: float 3s ease-in-out infinite;
+        }
+
+
+        /* ANTENNA */
+
+        .antenna {
+            position: absolute;
+
+            width: 4px;
+            height: 25px;
+
+            background: #ffd42a;
+
+            top: -27px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            box-shadow: 0 0 8px #ffd42a;
+        }
+
+        .antenna::before {
+            content: "";
+
+            position: absolute;
+
+            width: 10px;
+            height: 10px;
+
+            background: #00ffe0;
+
+            border-radius: 50%;
+
+            top: -7px;
+            left: -3px;
+
+            box-shadow:
+                0 0 8px #00ffe0,
+                0 0 18px #00ffe0;
+        }
+
+
+        /* EARS */
+
+        .ear {
+            position: absolute;
+
+            width: 18px;
+            height: 55px;
+
+            background: #202329;
+
+            border: 2px solid #ffd42a;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 10px rgba(255, 212, 42, 0.5);
+        }
+
+        .ear.left {
+            left: -13px;
+        }
+
+        .ear.right {
+            right: -13px;
+        }
+
+
+        /* FACE */
+
+        .face {
+            width: 145px;
+            height: 105px;
+
+            background: #08090b;
+
+            border-radius: 30px;
+
+            border: 1px solid rgba(0, 255, 220, 0.4);
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 22px;
+
+            box-shadow:
+                inset 0 0 20px rgba(0, 255, 220, 0.08);
+        }
+
+
+        /* EYES */
+
+        .eyes {
+            display: flex;
+            gap: 38px;
+        }
+
+        .eye {
+            width: 25px;
+            height: 18px;
+
+            background: #00ffe0;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 8px #00ffe0,
+                0 0 20px #00ffe0;
+        }
+
+
+        /* MOUTH */
+
+        .mouth {
+            width: 60px;
+            height: 9px;
+
+            border-radius: 20px;
+
+            background: #ffd42a;
+
+            box-shadow:
+                0 0 8px #ffd42a,
+                0 0 18px rgba(255, 212, 42, 0.8);
+        }
+
+
+        /* TITLE */
+
+        .agent-title {
+            margin-top: 28px;
+
+            font-size: 24px;
+            font-weight: 600;
+
+            letter-spacing: 1px;
+        }
+
+        .agent-status {
+            margin-top: 7px;
+
+            color: #00ffe0;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* CHAT BOX */
+
+        .chat-box {
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 18px;
+
+            background: #0c0e11;
+
+            border: 1px solid rgba(0, 255, 224, 0.25);
+
+            border-radius: 18px;
+
+            box-shadow:
+                inset 0 0 20px rgba(0, 255, 224, 0.04);
+        }
+
+
+        .chat-label {
+            font-size: 12px;
+
+            color: #9fa4aa;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* INPUT */
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+width: 50px;
+            padding: 13px 14px;
+
+            background: #17191e;
+
+            border: 1px solid #30343a;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            color: white;
+
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #00ffe0;
+
+            box-shadow: 0 0 10px rgba(0, 255, 224, 0.2);
+        }
+
+
+        /* SEND BUTTON */
+
+        button {
+            padding: 0 18px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #ffd42a;
+
+            color: #08090b;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 12px #ffd42a,
+                0 0 25px rgba(255, 212, 42, 0.4);
+        }
+
+
+        /* CHAT RESPONSE */
+
+        .response {
+            margin-top: 14px;
+
+            padding: 12px;
+
+            min-height: 45px;
+
+            border-radius: 10px;
+
+            background: #14161a;
+
+            color: #00ffe0;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            display: none;
+        }
+
+
+        /* ANIMATION */
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+    
