@@ -3,97 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AI Client Agent</title>
-
-<link rel="stylesheet" href="style.css">
-     <script src="script.js" defer></script>
+    <title>NextWord AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
-
 <body>
+    <div class="app-shell">
 
-    <div class="agent-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">N</div>
+                <div>
+                    <div class="brand-name">NextWord</div>
+                    <div class="brand-subtitle">RNN Intelligence</div>
+                </div>
+            </div>
 
-        <!-- ROBOT -->
+            <button class="new-chat" id="newChatBtn">
+                <span>＋</span>
+                New Prediction
+            </button>
 
-        <div class="robot">
+            <nav class="nav">
+                <div class="nav-label">WORKSPACE</div>
+                <a class="nav-item active" href="#">
+                    <span>⌂</span> Playground
+                </a>
+                <a class="nav-item" href="#">
+                    <span>◈</span> RNN Model
+                </a>
+                <a class="nav-item" href="#">
+                    <span>◌</span> How it works
+                </a>
+            </nav>
 
-            <div class="antenna"></div>
+            <div class="sidebar-bottom">
+                <div class="model-card">
+                    <div class="status-dot"></div>
+                    <div>
+                        <strong>Model online</strong>
+                        <small>Flask API connected</small>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span>TensorFlow</span>
+                    <span>Flask</span>
+                    <span>RNN</span>
+                </div>
+            </div>
+        </aside>
 
-            <div class="ear left"></div>
-            <div class="ear right"></div>
+        <!-- Main -->
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <div class="eyebrow">RNN NEXT-WORD PREDICTION</div>
+                    <h1>What comes next?</h1>
+                </div>
+                <div class="top-status">
+                    <span class="live-dot"></span>
+                    API Ready
+                </div>
+            </header>
 
-            <div class="face">
+            <section class="workspace">
 
-                <div class="eyes">
-                    <div class="eye"></div>
-                    <div class="eye"></div>
+                <div class="hero">
+                    <div class="hero-badge">AI TEXT COMPLETION</div>
+                    <h2>Give the model a sentence.<br><span>Let it finish the thought.</span></h2>
+                    <p>
+                        Enter a seed sentence and your trained RNN will predict
+                        the most likely next word.
+                    </p>
                 </div>
 
-                <div class="mouth"></div>
+                <div class="prediction-area">
 
-            </div>
+                    <div class="conversation" id="conversation">
+                        <div class="empty-state" id="emptyState">
+                            <div class="neural-icon">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <h3>Ready for your sentence</h3>
+                            <p>Try something like <button class="example-btn">"I love"</button></p>
+                        </div>
+                    </div>
 
-        </div>
+                    <div class="composer">
+                        <div class="composer-label">
+                            <span>SEED SENTENCE</span>
+                            <span id="charCount">0 characters</span>
+                        </div>
 
+                        <div class="input-wrap">
+                            <textarea
+                                id="textInput"
+                                rows="2"
+                                maxlength="500"
+                                placeholder="Type a sentence, e.g. I love..."
+                                autocomplete="off"
+                            ></textarea>
 
-        <!-- TITLE -->
+                            <button id="predictBtn" class="predict-btn">
+                                <span>Predict</span>
+                                <span class="arrow">→</span>
+                            </button>
+                        </div>
 
-        <div class="agent-title">
-            Client Agent
-        </div>
+                        <div class="composer-hint">
+                            <span>Press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to predict</span>
+                            <span>Powered by your trained RNN</span>
+                        </div>
+                    </div>
 
-        <div class="agent-status">
-            ● Online
-        </div>
+                </div>
+            </section>
 
-
-        <!-- CHAT -->
-
-        <div class="chat-box">
-
-            <div class="chat-label">
-                Ask the agent about a product
-            </div>
-
-            <div class="input-row">
-
-                <input
-                    type="text"
-                    id="product"
-                    placeholder="Product name..."
-                >
-
-                <input
-                    type="number"
-                    id="price"
-                    placeholder="Price"
-                >
-
-                <button onclick="askAgent()">
-                    Send
-                </button>
-
-            </div>
-
-
-            <div
-                class="response"
-                id="response">
-            </div>
-
-        </div>
-
+            <footer class="footer">
+                <span>Inference only • No training happens in the browser</span>
+                <span>model.keras → Flask → JavaScript</span>
+            </footer>
+        </main>
     </div>
-
-
-
-
-
-
-
-   
-
 </body>
 </html>

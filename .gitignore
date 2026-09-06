@@ -1,1 +1,10 @@
 Personal_Notess/
+venv/
+__pycache__/
+*.pyc
+
+*.keras
+*.pkl
+
+.ipynb_checkpoints/
+.vscode/
